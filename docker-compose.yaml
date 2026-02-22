@@ -1,0 +1,30 @@
+version: '3.8'
+
+backend:
+  build: backend
+  hostname: backend-host
+  volumes:
+    - ./backend:/app
+  ports:
+    - "8000:8000"
+  networks:
+    - student-network
+
+frontend:
+  build: frontend
+  hostname:frontend-host
+  volumes:
+    - ./frontend:/app
+  ports:
+  - "3000:3000"
+  environment:
+    - BACKENDURL=http://backend-host:8000
+  links:
+    - backend
+  depends_on:
+    - backend
+  networks:
+    - student-network
+
+networks:
+  student-network: 

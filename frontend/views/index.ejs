@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Student Portal</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+    <div class="background-blobs">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+    </div>
+
+    <main class="container">
+        <header>
+            <h1 class="animate-fade-in">Student Portal</h1>
+            <p class="subtitle animate-fade-in-delay">Complete the form below to register a new student entry.</p>
+        </header>
+
+        <section class="card-container animate-slide-up">
+            <div class="glass-card form-section">
+                <div class="card-header">
+                    <h2>New Student Admission</h2>
+                    <span id="status-badge" class="status-badge status-live">Online</span>
+                </div>
+
+                <form id="admission-form" class="admission-form">
+                    <div class="input-group">
+                        <label for="student-name">Student Name</label>
+                        <input type="text" id="student-name" name="name" placeholder="Enter full name" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="student-grade">Grade / Score</label>
+                        <input type="text" id="student-grade" name="grade" placeholder="e.g. A+, 95%" required>
+                    </div>
+
+                    <div class="button-group">
+                        <button type="button" id="clear-btn" class="btn btn-secondary">Clear Fields</button>
+                        <button type="submit" class="btn btn-primary">Submit Admission</button>
+                    </div>
+                </form>
+
+                <div id="confirmation-msg" class="confirmation-message hidden">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                        <polyline points="22 4 12 14.01 9 11.01" />
+                    </svg>
+                    <span id="msg-text">Student added successfully!</span>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <p>&copy; 2024 Premium Node.js Frontend. Powered by Express.</p>
+        </footer>
+    </main>
+
+    <script src="/js/main.js"></script>
+</body>
+
+</html>
