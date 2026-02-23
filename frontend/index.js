@@ -5,6 +5,7 @@ require('dotenv').config();
 
 const app = express();
 const PORT = process.env.PORT || 5000;
+const HOST = '0.0.0.0'
 const BACKEND_URL = process.env.BACKEND_URL || 'http://localhost:8000';
 
 // Set view engine
@@ -48,6 +49,6 @@ app.post('/admission', async (req, res) => {
     }
 });
 
-app.listen(PORT, () => {
-    console.log(`Frontend server running at http://localhost:${PORT}`);
+app.listen(PORT, HOST, () => {
+    console.log(`Frontend server running at http://${HOST}:${PORT}`);
 });
