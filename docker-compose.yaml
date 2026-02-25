@@ -18,10 +18,11 @@ services:
     hostname: frontend-host
     volumes:
       - ./frontend:/app
+      - /app/node_modules
     ports:
       - "3001:3001"
     environment:
-      - BACKENDURL=http://backend-host:8000
+      - BACKEND_URL=http://backend-host:8000
     depends_on:
       - backend
     networks:
